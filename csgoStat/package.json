@@ -1,0 +1,12 @@
+{
+    "name": "csgoStatBot",
+    "version": "1.0.0",
+    "description": "discord bot that allow you to see csgo stats",
+    "main": "csgo_.js",
+    "author": "Flavian",
+    "dependencies": {
+        "discord.io": "github:woor/discord.io#gateway_v6",
+        "request": "^2.88.0",
+        "winston": "^3.2.1"
+    }
+}
