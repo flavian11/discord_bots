@@ -1,0 +1,17 @@
+{
+  "name": "challongebot",
+  "version": "1.0.0",
+  "description": "A discord bot for challonge tournament",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Flavian11",
+  "license": "ISC",
+  "dependencies": {
+    "discord.io": "github:woor/discord.io#gateway_v6",
+    "discord.js": "^11.4.2",
+    "request": "^2.88.0",
+    "winston": "^3.2.1"
+  }
+}
