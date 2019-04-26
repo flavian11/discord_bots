@@ -47,7 +47,7 @@ bot.on('message', function(user, userID, channelID, message, evt) {
 		
 		bot.sendMessage({
 		    to: channelID,
-		    message: 'total kills : ' + kills + '\ntotal deaths : ' + deaths + '\nratio : ' + ratio.toPrecision(4) + '\npercentage of heashot : ' + hsRatio.toPrecision(4) + '%'
+		    message: 'total kills : ' + kills + '\ntotal deaths : ' + deaths + '\nratio : ' + ratio.toPrecision(4) + '\npercentage of headshot : ' + hsRatio.toPrecision(4) + '%'
 		});
 	    });
 	}
