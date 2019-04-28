@@ -18,6 +18,8 @@ var bot = new Discord.Client({
 });
 
 var tournamentId;
+var url;
+var channelId;
 
 bot.on('ready', function (evt) {
     logger.info('Connected');
@@ -44,6 +46,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     }
                 }, function (error, httpResponse, body) {
                     let data = body;
+                    channelId = channelID;
 
                     if (httpResponse.statusCode != 200) {
                         bot.sendMessage({
@@ -53,9 +56,10 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     }
                     else {
                         tournamentId = data.tournament.id;
+                        url = data.tournament.full_challonge_url;
                         bot.sendMessage({
                             to: channelID,
-                            message: 'voici l\'url du tournoi:\n' + data.tournament.full_challonge_url
+                            message: 'voici l\'url du tournoi:\n' + url
                         });
                     }
                 });
@@ -100,6 +104,35 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     });
                 }
             });
+        }
+        else if (message == '!url') {
+            bot.sendMessage({
+                to: channelID,
+                message: 'voici l\'url du tournoi:\n' + url
+            });
+        }
+        else if (message == '!start') {
+            if (user == 'flavian' || user == 'Mouetton') {
+                request.post('https://api.challonge.com/v1/tournaments/' + tournamentId + '/start.json', {
+                    json: {
+                        api_key: challonge.key
+                    }
+                }, function (error, httpResponse, body) {
+                    console.log(body);
+                    if (httpResponse.statusCode == 200) {
+                        bot.sendMessage({
+                            to: channelID,
+                            message: 'tournament is starting !'
+                        });
+                    }
+                    else {
+                        bot.sendMessage({
+                            to: channelID,
+                            message: 'Can\'t starting tournament: ' + data.errors
+                        });
+                    }
+                });
+            }
         }
     }
 });
