@@ -1,0 +1,10 @@
+{
+    "name": "PolicemanBot",
+    "version": "1.0.0",
+    "description": "discord bot that kick you if you say insult",
+    "main": "bot.js",
+    "author": "Flavian",
+    "dependencies": {
+        "discord.js": "^11.5.1"
+    }
+}
