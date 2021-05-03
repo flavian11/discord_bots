@@ -1,0 +1,15 @@
+{
+  "name": "leagueofbot",
+  "version": "1.0.0",
+  "description": "a discord bot who give info about pokemon",
+  "main": "pokeinfoBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Flav",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.6.3",
+    "request": "^2.88.2"
+  }
+}
