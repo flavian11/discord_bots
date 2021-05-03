@@ -27,7 +27,7 @@ client.on('message', message => {
   })
 });
 
-function checkInjure(message) {
+async function checkInjure(message) {
   return new Promise(async function (resolve, reject) {
     const fileStream = fs.createReadStream('injure.txt');
 
